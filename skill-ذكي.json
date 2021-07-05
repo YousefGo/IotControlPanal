@@ -1,0 +1,224 @@
+{
+  "intents": [
+    {
+      "intent": "1",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "١"
+        },
+        {
+          "text": "html"
+        },
+        {
+          "text": "بناء مواقع"
+        },
+        {
+          "text": "تصميم مواقع انترنت"
+        },
+        {
+          "text": "تصميم ويب"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "خدمات",
+      "examples": [
+        {
+          "text": "1"
+        },
+        {
+          "text": "2"
+        },
+        {
+          "text": "3"
+        },
+        {
+          "text": "كيف استفيد"
+        },
+        {
+          "text": "ماذا تقدمون ؟"
+        },
+        {
+          "text": "ما هي خدمات الموقع"
+        },
+        {
+          "text": "ما هي خدماتكم ؟"
+        }
+      ],
+      "description": "النية للبحث عن خدمات الموقع "
+    },
+    {
+      "intent": "عن_الموقع",
+      "examples": [
+        {
+          "text": "١"
+        },
+        {
+          "text": "ما هذا الموقع ؟"
+        },
+        {
+          "text": "ما هو موقع الأذرع الذكية"
+        },
+        {
+          "text": "من أنتم ؟"
+        }
+      ],
+      "description": "وصف عن الموقع"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "خدمات",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "التحكم بالروبوت",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "خدمات الموقع ",
+      "output": {
+        "generic": [
+          {
+            "title": "الخدمات الموجودة في الموقع ، من فضلك قم باختيار واحد للاستعراض ",
+            "options": [
+              {
+                "label": "تصميم صفحات ويب 1",
+                "value": {
+                  "input": {
+                    "text": "بناء صفحات إنترنت وتصميمها وبرمجتها"
+                  }
+                }
+              },
+              {
+                "label": "برمجة المواقع الإلكترونية 2",
+                "value": {
+                  "input": {
+                    "text": "برمجة الواجهات الخلفية للمواقع "
+                  }
+                }
+              },
+              {
+                "label": "التحكم بالروبوت عن بعد 3",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#خدمات",
+      "dialog_node": "node_3_1625454323968",
+      "previous_sibling": "node_7_1625456211601"
+    },
+    {
+      "type": "standard",
+      "title": "البحث عن لاخدمات ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "في خدمة تصميم المواقع نقوم بتحويل أفكارك إلى مواقع إلكترونية يستطيع الجميع الوصول من خلالها "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#1",
+      "dialog_node": "node_7_1625456211601",
+      "previous_sibling": "مرحبا"
+    },
+    {
+      "type": "standard",
+      "title": "أي شيء آخر",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "لم أفهم، يمكنك محاولة اعادة الصياغة"
+              },
+              {
+                "text": "هل يمكنك اعادة صياغة عبارتك؟ أنا لا فهم"
+              },
+              {
+                "text": "لم أفهم قصدك"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "أي شيء آخر",
+      "previous_sibling": "node_3_1625454323968",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "مرحبا",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مرحبا، كيف يمكنني مساعدتك؟"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "مرحبا"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": ":هل قصدت",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "كل ما سبق خطأ"
+    },
+    "human_agent_assist": {
+      "prompt": ":هل قصدت"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "ذكي",
+  "language": "ar",
+  "description": "روبوت يجيب على تساؤلات زوار الموقع"
+}
