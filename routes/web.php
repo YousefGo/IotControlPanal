@@ -22,5 +22,6 @@ Route::get('/arm/{lang}',[EngineController::class,'showEngine'])->name('engine.i
 
 Route::view('/baseControl','engin.base');
 Route::post('addMove',[baseController::class,'addMove'])->name('engine.addMove');
+Route::get('getLastMove',[baseController::class,'showLastMove'])->name('engine.lastMove');
 Route::post('/storeengine',[EngineController::class,'update'])->name('store.engine');
 

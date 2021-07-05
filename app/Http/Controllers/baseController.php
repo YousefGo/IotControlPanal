@@ -9,33 +9,34 @@ class baseController extends Controller
 {
     public function addMove(Request $req){
         $move = new Move();
-
-        if(isset($req->up)){   
+       $s= $req->move;
+        if('up'==  $s){   
         $move->up = 1;
         $move->save();
         return response()->json($move);
         
+        
         }
-        else if (isset($req->right)){
+        else if ('right'==  $s){
             $move->right = 1;
             $move->save();
             return response()->json($move);
 
             
         }
-        else if (isset($req->left)){
+        else if ('left'==  $s){
             $move->left = 1;
             $move->save();
             return response()->json($move);
 
         }
-        else if (isset($req->down)){
+        else if ('down'==  $s){
             $move->down = 1;
             $move->save();
             return response()->json($move);
 
         }
-        else if (isset($req->stop)){
+        else if ('stop'==  $s){
             $move->stop = 1;
             $move->save();
             return response()->json($move);
@@ -43,4 +44,9 @@ class baseController extends Controller
         }
     
     } 
+
+    function showLastMove (){
+        $maxId=Move::max('id');
+        return Move::where('id',$maxId)->first();
+    }
 }
