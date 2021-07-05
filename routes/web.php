@@ -15,7 +15,7 @@ use App\Http\Controllers\baseController;
 */
 
 Route::get('/', function () {
-    return view('engin.index');
+    return 'test';
 });
 Route::get('/arm/ar',[EngineController::class,'showArabic'])->name('engine.showarabic');
 Route::get('/arm/{lang}',[EngineController::class,'showEngine'])->name('engine.index');
