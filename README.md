@@ -1,25 +1,24 @@
-<h1>Robotic Engine Arm Website -Move Base Remotely -  (Task 2 )</h1>
+<h1>Robotic Engine Arm Website -Embded IBM Wastson Chatbot -  (Task 3 )</h1>
 <p>
-The Goal of this task to build page , can set a Move  the base of robot .   
-So it Consist from Two module : </p>
+The Goal of this task to create Chat bot assanit   , can interact with user in website  .    
+    so we have serval steps: </p>
 <ul>
-    <li>	One webpage (User interface )  Move Controller (up,down,left,right)
-    <li>Database contains one table , Moves  Table  .</li> 
-    <li> One Page to get last move user made  </li> 
-    <li>
-  Exta Feture
-        <ul>
-            <li> mobile  Responsive layout  </li>
-            <li>  Using Ajax to speed up sending Requst </li>
+    <li create account in IBM  </li>
+    <li> create Assaint .</li> 
+    <li> create Skills .</li> 
+    <li> create intets </li> 
+    <li> insert Nodes </li> 
+    <li> export json file of skills </li> 
+    <li> embded to website  </li> 
+
+
 
     
 </ul>    
 <h2> So I used  below tech </h2>
 <ul>
-    <li>Html ,CSS , Javascirpt ,<strong>Bootstarp</strong> for my front end parts . </li>
-    <li>Php , Mysql , <strong> Laravel </strong> framworks . </li>
-    <li> with MVC desinge patren </li>
-    <li> AJAX </li>
+    <li>IBM wastson  </li>
+ 
 <ul>
 
 <hr>
@@ -27,14 +26,11 @@ So it Consist from Two module : </p>
 The scenario off app: 
     </h3>
  <p>   
-The user enter to control Robot  Page , using get method , from route , and show the forms page ,with ability 
-     To enter new Move  , By clicking  tho one button  ,the post request well go to <strong>AJAX </strong>  and ajax well send back end controller , and insert new data and save it in database .
+The user Pop up the chat windows to control , and start chatting with box 
     </p>
 
 
 
     
     
-![Screenshot (178)](https://user-images.githubusercontent.com/38506780/124224272-01bb2880-db0e-11eb-965a-caa097ae312c.png)
-![Screenshot (179)](https://user-images.githubusercontent.com/38506780/124224275-02ec5580-db0e-11eb-887c-6e606e700d42.png)
-![Screenshot (181)](https://user-images.githubusercontent.com/38506780/124224281-054eaf80-db0e-11eb-884a-b72eafeaaf49.png)
+![Screenshot (184)](https://user-images.githubusercontent.com/38506780/124415936-9320d980-dd5e-11eb-8575-9c724328f36a.png)
